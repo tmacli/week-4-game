@@ -37,16 +37,19 @@
   var wins = 0;
   var losses = 0;
   var counter = 0;
-  var targetNumber = Math.floor(Math.random() * 101);
+  var targetNumber = Math.floor(Math.random() * 100 + 1);
 
   $("#numberToGuess").text(targetNumber);
 
-  var numberOptions = [Math.floor(Math.random() * 11), Math.floor(Math.random() * 11), Math.floor(Math.random() * 11), Math.floor(Math.random() * 11)];
+    var yoshiValue1 = Math.floor(Math.random() * 10 + 1);
+    var yoshiValue2 = Math.floor(Math.random() * 10 + 1);
+    var yoshiValue3 = Math.floor(Math.random() * 10 + 1);
+    var yoshiValue4 = Math.floor(Math.random() * 10 + 1);
 
-    var imageYoshi1 = $("<img>").addClass("yoshiImage").attr("src", "assets/images/Yoshi_PMCS.png").attr("data-yoshivalue", numberOptions[0]);
-    var imageYoshi2 = $("<img>").addClass("yoshiImage").attr("src", "assets/images/PMCS_Light_Blue_Yoshi.png").attr("data-yoshivalue", numberOptions[1]);
-    var imageYoshi3 = $("<img>").addClass("yoshiImage").attr("src", "assets/images/PMCS_Orange_Yoshi.png").attr("data-yoshivalue", numberOptions[2]);
-    var imageYoshi4 = $("<img>").addClass("yoshiImage").attr("src", "assets/images/PMCS_Purple_Yoshi.png").attr("data-yoshivalue", numberOptions[3]);
+    var imageYoshi1 = $("<img>").addClass("yoshiImage").attr("src", "assets/images/Yoshi_PMCS.png").attr("data-yoshivalue", yoshiValue1).attr("id", "yoshi1");
+    var imageYoshi2 = $("<img>").addClass("yoshiImage").attr("src", "assets/images/PMCS_Light_Blue_Yoshi.png").attr("data-yoshivalue", yoshiValue2).attr("id", "yoshi2");
+    var imageYoshi3 = $("<img>").addClass("yoshiImage").attr("src", "assets/images/PMCS_Orange_Yoshi.png").attr("data-yoshivalue", yoshiValue3).attr("id", "yoshi3");
+    var imageYoshi4 = $("<img>").addClass("yoshiImage").attr("src", "assets/images/PMCS_Purple_Yoshi.png").attr("data-yoshivalue", yoshiValue4).attr("id", "yoshi4");
 
     $("#yoshis").append(imageYoshi1);
     $("#yoshis").append(imageYoshi2);
@@ -80,11 +83,19 @@
         wins++;
         displayResults();
         counter = 0;
-        targetNumber = Math.floor(Math.random() * 101);
+        targetNumber = Math.floor(Math.random() * 100 + 1);
         $("#numberToGuess").text(targetNumber);
         score = "";
         score += "Your total score is: " + counter;
         $("#Score").text(score);
+        yoshiValue1 = Math.floor(Math.random() * 10 + 1);
+        yoshiValue2 = Math.floor(Math.random() * 10 + 1);
+        yoshiValue3 = Math.floor(Math.random() * 10 + 1);
+        yoshiValue4 = Math.floor(Math.random() * 10 + 1);
+        $("#yoshi1").data("yoshivalue", yoshiValue1);
+        $("#yoshi2").data("yoshivalue", yoshiValue2);
+        $("#yoshi3").data("yoshivalue", yoshiValue3);
+        $("#yoshi4").data("yoshivalue", yoshiValue4);
       }
 
       else if (counter > targetNumber) {
@@ -92,11 +103,19 @@
         losses++;
         displayResults();
         counter = 0;
-        targetNumber = Math.floor(Math.random() * 101);
+        targetNumber = Math.floor(Math.random() * 100 + 1);
         $("#numberToGuess").text(targetNumber);
         score = "";
         score += "Your total score is: " + counter;
         $("#Score").text(score);
+        yoshiValue1 = Math.floor(Math.random() * 10 + 1);
+        yoshiValue2 = Math.floor(Math.random() * 10 + 1);
+        yoshiValue3 = Math.floor(Math.random() * 10 + 1);
+        yoshiValue4 = Math.floor(Math.random() * 10 + 1);
+        $("#yoshi1").data("yoshivalue", yoshiValue1);
+        $("#yoshi2").data("yoshivalue", yoshiValue2);
+        $("#yoshi3").data("yoshivalue", yoshiValue3);
+        $("#yoshi4").data("yoshivalue", yoshiValue4);
       }
   })
 
